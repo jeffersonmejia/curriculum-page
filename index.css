@@ -1,0 +1,259 @@
+:root {
+  --primary-border-radius: 24px;
+  --secondary-border-radius: 4px;
+  --primary-box-color: rgb(242, 223, 255);
+  --primary-text-color: rgb(68, 0, 114);
+  --secondary-box-color: rgb(249, 223, 255);
+  --secondary-text-color: rgb(68, 0, 114);
+  --tertiary-box-color: rgb(249, 223, 255);
+  --tertiary-text-color: rgb(68, 0, 114);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  padding: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  max-width: 768px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.body-hidden {
+  opacity: 0;
+}
+
+header,
+article {
+  padding: 1.5rem;
+  background-color: var(--primary-box-color);
+  border-radius: var(--primary-border-radius);
+}
+
+header figure {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-pic {
+  width: 8.5rem;
+  border-radius: 50%;
+  border: 6px solid rgb(255, 255, 255);
+}
+header h2 {
+  font-size: 1.1rem;
+}
+header :is(h2, h1, p, span, small),
+.section-contact :is(h2, h1, p, span, small) {
+  color: var(--primary-text-color);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+article p {
+  display: flex;
+  flex-direction: column;
+}
+
+article:not(:first-child) h2 {
+  margin-bottom: 0.5rem;
+}
+
+article h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+article:not(:first-child) p {
+  margin-bottom: 0.3rem;
+}
+
+article small {
+  text-align: justify;
+}
+
+article h3:not(:nth-child(2)) {
+  margin-top: 1rem;
+}
+
+.article-skills h2 {
+  padding-bottom: 1rem;
+}
+
+.article-skills p {
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.article-skills span {
+  width: 150px;
+}
+
+.article-skills small {
+  padding-left: 0.7rem;
+}
+
+.article-languages p {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+}
+
+.section-skills article {
+  background-color: var(--secondary-box-color);
+}
+
+.section-skills article {
+  gap: 0.35rem;
+}
+
+.section-contact img {
+  cursor: pointer;
+}
+
+.section-skills article :is(h2, p, small, span, h3, a) {
+  color: var(--secondary-text-color);
+}
+.section-educacion a {
+  color: inherit;
+}
+.section-skills progress {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 200px;
+  height: 14px;
+  border-radius: var(--secondary-border-radius);
+  overflow: hidden;
+  background-color: rgba(66, 0, 110, 0.2);
+}
+
+.section-skills progress::-webkit-progress-bar {
+  background-color: rgba(66, 0, 110, 0.2);
+}
+
+.section-skills progress::-webkit-progress-value {
+  background-color: rgb(66, 0, 110);
+}
+
+.section-skills progress::-moz-progress-bar {
+  background-color: rgb(66, 0, 110);
+}
+
+.section-skills progress::-webkit-progress-value {
+  background-color: rgb(66, 0, 110);
+  transition: width 0.5s ease;
+}
+
+.section-skills progress::-moz-progress-bar {
+  background-color: rgb(66, 0, 110);
+  transition: width 0.5s ease;
+}
+
+.section-educacion article {
+  background-color: var(--tertiary-box-color);
+}
+
+.section-educacion article :is(h2, p, small, span, h3) {
+  color: var(--tertiary-text-color);
+}
+
+footer {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(100, 100, 100);
+}
+
+footer a {
+  color: rgb(100, 100, 100);
+}
+
+.section-educacion small:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-container img {
+  width: 20px;
+  border-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    max-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  header {
+    grid-row: 1/2;
+  }
+
+  section {
+    grid-column: 1/-1;
+    display: grid;
+    gap: 1rem;
+  }
+  .section-contact {
+    grid-column: 2/-1;
+    display: flex;
+  }
+  .section-educacion {
+    display: flex;
+    grid-column: 2/3;
+  }
+  .section-contact article {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  section {
+    grid-column: 2/3;
+  }
+  .article-skills {
+    grid-column: 1/2;
+  }
+  .article-experience {
+    grid-column: 1/-1;
+  }
+  .section-skills {
+    grid-column: 1/2;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .article-skills span {
+    width: 75px;
+  }
+  footer {
+    grid-column: 1/-1;
+  }
+}
