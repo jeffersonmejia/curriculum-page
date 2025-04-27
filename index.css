@@ -181,12 +181,41 @@ article h3:not(:nth-child(2)) {
 }
 
 footer {
-  padding-bottom: 1.5rem;
   padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  color: rgb(100, 100, 100);
+  color: rgb(70, 70, 70);
+}
+
+footer .social-network-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: transparent;
+}
+
+footer h5 {
+  color: rgb(106, 0, 116);
+}
+
+footer a {
+  border: 1px solid rgb(106, 0, 116);
+  background-color: rgb(243, 112, 255);
+  padding: 1rem;
+  border-radius: var(--secondary-border-radius);
+  transition: transform 0.15s ease-in;
+}
+
+footer a:hover {
+  transform: translateY(-5%);
+}
+
+footer img {
+  width: 1.4rem;
 }
 
 footer a {
