@@ -97,7 +97,9 @@ article h3:not(:nth-child(2)) {
   margin-top: 1rem;
 }
 
-.article-skills h2 {
+.article-skills h2,
+.section-contact h2,
+.section-educacion h2 {
   padding-bottom: 1rem;
 }
 
