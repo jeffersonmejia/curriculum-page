@@ -1,7 +1,7 @@
 const d = document,
   n = navigator,
   $listProgress = d.querySelectorAll('progress'),
-  $listProgressText = d.querySelectorAll('.article-skills p'),
+  $listProgressText = d.querySelectorAll('.article-skills li'),
   $body = d.querySelector('body')
 
 function typeValueProgress() {

@@ -76,6 +76,10 @@ article p {
   flex-direction: column;
 }
 
+.article-skills li {
+  display: flex;
+}
+
 article:not(:first-child) h2 {
   margin-bottom: 0.5rem;
 }
@@ -242,7 +246,7 @@ footer a {
   list-style: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   body {
     max-width: none;
     display: grid;
