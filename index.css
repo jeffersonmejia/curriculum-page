@@ -238,6 +238,10 @@ footer a {
   border-radius: 4px;
 }
 
+.article-skills ul {
+  list-style: none;
+}
+
 @media screen and (min-width: 768px) {
   body {
     max-width: none;
