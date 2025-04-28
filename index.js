@@ -6,7 +6,7 @@ const d = document,
 
 function typeValueProgress() {
   $listProgressText.forEach((p) => {
-    $progressValue = p.querySelector('progress').value * 100
+    $progressValue = p.querySelector('progress').dataset['value'] * 100
     $text = p.querySelector('small')
     $text.textContent = $progressValue + '%'
   })
@@ -14,11 +14,10 @@ function typeValueProgress() {
 
 function animateProgress() {
   $listProgress.forEach((progress) => {
-    const value = progress.value
-    progress.value = 0
+    const value = progress.dataset['value']
     setTimeout(() => {
       progress.value = value
-    }, 100)
+    }, 500)
   })
 }
 
