@@ -1,11 +1,11 @@
 :root {
   --primary-border-radius: 24px;
   --secondary-border-radius: 4px;
-  --primary-box-color: rgb(242, 223, 255);
+  --primary-box-color: #fff8e7;
   --primary-text-color: rgb(68, 0, 114);
-  --secondary-box-color: rgb(249, 223, 255);
+  --secondary-box-color: #fff8e7;
   --secondary-text-color: rgb(68, 0, 114);
-  --tertiary-box-color: rgb(249, 223, 255);
+  --tertiary-box-color: #fff8e7;
   --tertiary-text-color: rgb(68, 0, 114);
 }
 
@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   gap: 1.5rem;
   transition: opacity 0.15s ease-in-out;
+  background-color: #6a00ff;
 }
 
 .body-hidden {
@@ -39,6 +40,14 @@ article {
   padding: 1.5rem;
   background-color: var(--primary-box-color);
   border-radius: var(--primary-border-radius);
+}
+
+header,
+.section-contact article,
+.article-skills,
+.section-educacion article,
+.article-experience {
+  box-shadow: 1px 1px 12px rgb(75, 75, 75, 75);
 }
 
 header figure {
@@ -76,8 +85,17 @@ article p {
   flex-direction: column;
 }
 
-.article-skills li {
+.article-skills li,
+.article-skills-tech li {
   display: flex;
+}
+
+.article-skills {
+  /* grid-column: 1/2; */
+  /* grid-row: 2/3; */
+}
+.article-skills-tech {
+  grid-column: 2/3;
 }
 
 article:not(:first-child) h2 {
@@ -101,30 +119,31 @@ article h3:not(:nth-child(2)) {
   margin-top: 1rem;
 }
 
+.article-skills .title-n2 {
+  margin-top: 1rem;
+}
+
 .article-skills h2,
 .section-contact h2,
 .section-educacion h2 {
   padding-bottom: 1rem;
 }
 
-.article-skills p {
+.article-skills p,
+.article-skills-tech p {
   width: 100%;
   flex-direction: row;
   align-items: center;
 }
 
-.article-skills span {
-  width: 150px;
+.article-skills span,
+.article-skills-tech span {
+  width: 60%;
 }
 
-.article-skills small {
+.article-skills small,
+.article-skills-tech small {
   padding-left: 0.7rem;
-}
-
-.article-languages p {
-  display: flex;
-  flex-direction: row;
-  gap: 0.4rem;
 }
 
 .section-skills article {
@@ -191,7 +210,6 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: rgb(70, 70, 70);
 }
 
 footer .social-network-links {
@@ -204,12 +222,11 @@ footer .social-network-links {
 }
 
 footer h5 {
-  color: rgb(106, 0, 116);
+  color: white;
 }
 
 footer a {
-  border: 1px solid rgb(106, 0, 116);
-  background-color: rgb(243, 112, 255);
+  background-color: rgb(248, 167, 255);
   padding: 1rem;
   border-radius: var(--secondary-border-radius);
   transition: transform 0.15s ease-in;
@@ -242,13 +259,20 @@ footer a {
   border-radius: 4px;
 }
 
-.article-skills ul {
+.article-skills ul,
+.article-skills-tech ul {
   list-style: none;
+}
+
+.article-skills ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 @media screen and (min-width: 1024px) {
   body {
-    max-width: none;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -279,17 +303,20 @@ footer a {
     grid-column: 2/3;
   }
   .article-skills {
-    grid-column: 1/2;
+    /* grid-column: 1/2; */
+  }
+  .article-skills-tech {
+    grid-column: 2/3;
   }
   .article-experience {
     grid-column: 1/-1;
   }
   .section-skills {
     grid-column: 1/2;
-    grid-template-columns: repeat(2, 1fr);
   }
-  .article-skills span {
-    width: 75px;
+  .article-skills span,
+  .article-skills-tech {
+    /* width: 75px; */
   }
   footer {
     grid-column: 1/-1;
