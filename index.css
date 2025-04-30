@@ -1,12 +1,13 @@
 :root {
   --primary-border-radius: 24px;
   --secondary-border-radius: 4px;
-  --primary-box-color: #fff8e7;
+  --primary-box-color: rgb(242, 223, 255);
   --primary-text-color: rgb(68, 0, 114);
-  --secondary-box-color: #fff8e7;
+  --secondary-box-color: rgb(242, 223, 255);
   --secondary-text-color: rgb(68, 0, 114);
-  --tertiary-box-color: #fff8e7;
+  --tertiary-box-color: rgb(242, 223, 255);
   --tertiary-text-color: rgb(68, 0, 114);
+  --body-bg-color: white;
 }
 
 * {
@@ -28,7 +29,7 @@ body {
   flex-direction: column;
   gap: 1.5rem;
   transition: opacity 0.15s ease-in-out;
-  background-color: #6a00ff;
+  background-color: var(--body-bg-color);
 }
 
 .body-hidden {
@@ -47,7 +48,7 @@ header,
 .article-skills,
 .section-educacion article,
 .article-experience {
-  box-shadow: 1px 1px 12px rgb(75, 75, 75, 75);
+  box-shadow: 1px 1px 4px rgb(150, 150, 150);
 }
 
 header figure {
@@ -222,10 +223,11 @@ footer .social-network-links {
 }
 
 footer h5 {
-  color: white;
+  color: var(--primary-text-color);
 }
 
 footer a {
+  border: 1px solid rgb(189, 100, 197);
   background-color: rgb(248, 167, 255);
   padding: 1rem;
   border-radius: var(--secondary-border-radius);
